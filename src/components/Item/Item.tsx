@@ -3,7 +3,7 @@ import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "@/app/firebase";
 import { TItem } from "@/Types/TItem";
 import UpdateItemForm from "@/components/UpdateItemForm/UpdateItemForm";
-import PrimaryButton from "@/Elements/PrimaryButton/PrimaryButton";
+import PrimaryButton from "@/elements/PrimaryButton/PrimaryButton";
 
 const Item: React.FC<TItem> = ({ name, price, id }) => {
   const [isUpdating, setIsUpdating] = useState(false);

@@ -9,20 +9,19 @@ import { db } from "./firebase";
 import AddItemForm from "@/components/AddItemForm/AddItemForm";
 import { TItem } from "@/Types/TItem";
 import Item from "@/components/Item/Item";
+import TotalCount from "@/elements/TotalCount/TotalCount";
 
 export default function Home() {
   const [items, setItems] = useState<TItem[]>([]);
   const [total, setTotal] = useState(0);
 
-  // Read items from database
   useEffect(() => {
     const q = query(collection(db, "items"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let itemsArr: TItem[] = [];
 
       querySnapshot.forEach((doc) => {
-        // @ts-ignore
-        itemsArr.push({ ...doc.data(), id: doc.id });
+        itemsArr.push({ ...doc.data(), id: doc.id } as TItem);
       });
       setItems(itemsArr);
 
@@ -57,14 +56,7 @@ export default function Home() {
               );
             })}
           </ul>
-          {items.length < 1 ? (
-            ""
-          ) : (
-            <div className="flex justify-between p-3">
-              <span>Total</span>
-              <span>${total}</span>
-            </div>
-          )}
+          {items.length > 0 &&  <TotalCount total={total} />}
         </div>
       </div>
     </main>

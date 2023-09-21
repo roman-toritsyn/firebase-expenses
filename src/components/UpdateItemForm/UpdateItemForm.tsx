@@ -1,9 +1,9 @@
-import { validationSchema } from "@/components/AddItemForm/validationSchema";
 import { useFormik } from "formik";
 import React from "react";
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/app/firebase";
-import PrimaryButton from "@/Elements/PrimaryButton/PrimaryButton";
+import PrimaryButton from "@/elements/PrimaryButton/PrimaryButton";
+import { validationSchema } from "@/constants/itemFormsValidation.schema";
 
 type TUpdateItemForm = {
   itemName: string;

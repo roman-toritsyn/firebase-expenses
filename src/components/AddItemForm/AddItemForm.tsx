@@ -1,9 +1,9 @@
-import { validationSchema } from "@/components/AddItemForm/validationSchema";
 import { useFormik } from "formik";
 import React from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/app/firebase";
-import PrimaryButton from "@/Elements/PrimaryButton/PrimaryButton";
+import PrimaryButton from "@/elements/PrimaryButton/PrimaryButton";
+import { validationSchema } from "@/constants/itemFormsValidation.schema";
 
 const AddItemForm = () => {
   const formik = useFormik({
@@ -54,7 +54,7 @@ const AddItemForm = () => {
           {formik.errors.price}
         </div>
       ) : null}
-        <PrimaryButton name="+" type="submit" />
+      <PrimaryButton name="+" type="submit" />
     </form>
   );
 };
