@@ -17,18 +17,15 @@ const Item: React.FC<TItem> = ({ name, price, id }) => {
   return (
     <li>
       <div className="my-4 w-full flex justify-between bg-slate-950">
-        <PrimaryButton
-          name="..."
-          clickHandler={toggleIsUpdating}
-          borderPosition="right"
-        />
-        <div className="p-4 w-full flex justify-between">
+        <PrimaryButton name="..." clickHandler={toggleIsUpdating} />
+        <div className="p-4 w-full flex justify-between border-l-2 border-r-2 border-slate-900">
           <span className="capitalize">{name}</span>
           <span>${price}</span>
         </div>
         <button
+          aria-label="delete"
           onClick={() => deleteItem(id)}
-          className="ml-8 p-4 border-l-2 border-slate-900 hover:bg-slate-900 w-16"
+          className="p-4 hover:bg-slate-900 w-16 text-white"
         >
           X
         </button>
