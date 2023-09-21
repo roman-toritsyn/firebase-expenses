@@ -69,7 +69,7 @@ const UpdateItemForm: React.FC<TUpdateItemForm> = ({
           {formik.errors.price}
         </div>
       ) : null}
-      <PrimaryButton name="Change" type="submit" />
+      <PrimaryButton name="OK" type="submit" />
     </form>
   );
 };
