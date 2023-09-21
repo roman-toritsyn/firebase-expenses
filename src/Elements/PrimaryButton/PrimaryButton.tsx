@@ -15,11 +15,10 @@ const PrimaryButton: React.FC<TPrimaryButton> = ({
     <button
       type={type}
       aria-label={name}
-      className="bg-slate-950 hover:bg-slate-900 p-3 text-xl text-white"
-      style={{ border: "2px solid red" }}
+      className="bg-slate-950 hover:bg-slate-900 p-3"
       onClick={clickHandler}
     >
-      <span className="text-white">{name}</span>
+      <span className="text-xl text-white">{name}</span>
     </button>
   );
 };
