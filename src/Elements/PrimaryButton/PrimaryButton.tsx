@@ -19,7 +19,7 @@ const PrimaryButton: React.FC<TPrimaryButton> = ({
     <button
       type={type}
       aria-label={type}
-      className={`text-white ${borderPosition && border} border-slate-900 bg-slate-950 hover:bg-slate-900 p-3 text-xl`}
+      className={`${borderPosition && border} border-slate-900 bg-slate-950 hover:bg-slate-900 p-3 text-xl text-white`}
       onClick={clickHandler}
     >
       {name}
